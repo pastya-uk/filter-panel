@@ -1,0 +1,14 @@
+<div class="filter-element filter-element-select-single">
+  <label
+    for="filter-{{vm.element.property}}"
+    class="filter-element-label" translate>
+    {{vm.element.title}}
+  </label>
+  <select
+    id="filter-{{vm.element.key}}"
+    class="form-control filter-element-form-control"
+    ng-model="vm.model"
+    ng-options="item.id as item.name|translate for item in vm.collection">
+    <option value="">–</option>
+  </select>
+</div>

@@ -1,0 +1,33 @@
+<!-- number-range filter element -->
+<div class="filter-element filter-element-number-range">
+  <label
+    class="filter-element-label"
+    for="filter-{{vm.element.property}}"
+    translate>
+    {{vm.element.title}}
+  </label>
+
+  <div class="filter-element-control">
+    <div class="range-group">
+      <input
+        type="number"
+        id="filter-{{vm.element.property}}"
+        class="form-control start"
+        min="{{vm.element.config.min}}"
+        max="{{vm.model.to || vm.element.config.max}}"
+        placeholder="{{'placeholders.minimum' | translate}}"
+        ng-model="vm.model.from"
+        ng-model-options="{ updateOn: 'default blur' }"
+        ng-change="vm.onNumberChange()">
+      <input
+        type="number"
+        class="form-control end"
+        min="{{vm.model.from || vm.element.config.min}}"
+        max="{{vm.element.config.max}}"
+        placeholder="{{'placeholders.maximum' | translate}}"
+        ng-model="vm.model.to"
+        ng-model-options="{ updateOn: 'default blur' }"
+        ng-change="vm.onNumberChange()">
+    </div>
+  </div>
+</div>

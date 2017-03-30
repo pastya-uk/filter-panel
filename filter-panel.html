@@ -1,0 +1,52 @@
+<div class="filter-panel row">
+  <div class="col-xs-12">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <div class="pull-right">
+          <a
+            href
+            class="btn btn-social btn-default btn-sm"
+            ng-click="vm.toggleAdvancedFilters()"
+            ng-show="vm.hideAdvancedFilters && vm.canDisplayAdvancedFiltersLink()">
+              <i class="fa fa-filter"></i>
+              <translate>SHOW_ADVANCED_FILTERS</translate>
+          </a>
+          <a
+            href
+            class="btn btn-social btn-default btn-sm"
+            ng-click="vm.toggleAdvancedFilters()"
+            ng-show="!vm.hideAdvancedFilters && vm.canDisplayAdvancedFiltersLink()">
+              <i class="fa fa-filter"></i>
+              <translate>HIDE_ADVANCED_FILTERS</translate>
+          </a>
+        </div>
+        <h3 class="box-title" translate>
+          components.filter_panel.filter_results
+        </h3>
+      </div>
+      <div class="box-body box-thinPad">
+        <!-- normal screen: -->
+        <div class="visible-lg visible-md hidden-sm hidden-xs filter-section filter-section-main-filters filter-bg cf">
+          <filter-element
+            ng-repeat="filterDefinition in vm.panelFilters"
+            class="filter-element-container {{filterDefinition.property}} {{filterDefinition.type}}"
+            element="filterDefinition"
+            collection="vm.values[filterDefinition.values]"
+            model="vm.model[filterDefinition.property]">
+          </filter-element>
+        </div>
+      </div>
+      <div class="box-footer">
+          <a ng-click="vm.submit()"
+             class="btn btn-primary"
+             ng-class="{'disabled': vm.disabled || !vm.isReady}"
+             translate>UPDATE</a>
+          <a ng-click="vm.resetFilters()"
+             class="btn btn-default"
+             ng-class="{'disabled': vm.disabled}"
+             translate>buttons.reset_filters</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

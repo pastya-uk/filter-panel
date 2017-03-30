@@ -1,0 +1,183 @@
+
+.filter-bg {
+  @include clearfix;
+  background: linear-gradient(
+    to bottom,
+    #e6eef2,
+    #e6eef2 70px,
+    #fff 70px,
+    #fff
+  );
+  background-size: 100% 72px;
+}
+
+.filter-element-container {
+  display: block;
+  float: left;
+}
+
+.filter-element {
+  padding: 5px 7px 0;
+  margin: 0;
+  height: 72px;
+  border-left:1px solid #fff;
+  background: #e6eef2;
+  border-bottom: 2px solid #fff;
+}
+
+.filter-element-label {
+  display: block;
+  text-transform: uppercase;
+  color: #1E1E46;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.filter-element-form-control {
+  border: 1px solid darken(#e6eef2, 10%);
+}
+
+.filter-element-date-range .range-group {
+  width: 250px;
+}
+
+.range-group {
+  width: 250px;
+  white-space: nowrap;
+  display: block;
+
+  input.start, input.end {
+    display: inline;
+  }
+
+  input.end {
+    @extend .pull-right;
+  }
+
+  span.range-group-divider {
+    display: inline;
+    padding: 5px 10px;
+    line-height: 1em;
+  }
+
+  input[type="number"],
+  input[type="date"],
+  input[type="text"] {
+    display: inline;
+    max-width: 120px;
+    padding: 5px;
+  }
+
+  input[type="number"] {
+    text-align: right;
+  }
+
+  input.date-input {
+    max-width: 85px;
+  }
+
+}
+
+
+// types of filter elements
+
+.expand-filters {
+  color: #333;
+  text-align: center;
+  padding: 0;
+  margin: 20px 0;
+  a {
+    background: white;
+    padding: 15px;
+    display: inline-block;
+    height: 30px;
+    margin: -10px 0 0 0;
+  }
+}
+.filter-element-selectize-single {
+  min-width: 300px;
+}
+.filter-element-date-range {
+  position: relative;
+
+  .datepicker {
+    position: absolute;
+  }
+
+  .start .datepicker {
+    left: 0 !important;
+  }
+
+  .end .datepicker {
+  }
+
+  .datepicker.dropdown-menu {
+    width: 250px;
+    height: 270px;
+  }
+  .datepicker.dropdown-menu button {
+    outline: none;
+    border: 0px;
+  }
+  .datepicker.dropdown-menu tbody {
+    height: 180px;
+  }
+  .datepicker.dropdown-menu tbody button {
+    padding: 6px;
+  }
+  .datepicker.dropdown-menu.datepicker-mode-1 tbody button,
+  .datepicker.dropdown-menu.datepicker-mode-2 tbody button {
+    height: 65px;
+  }
+
+  .datepicker.dropdown-menu {
+    .btn {
+      border-radius: 0;
+    }
+    .btn-default {
+      background: transparent;
+    }
+    .btn-primary {
+      font-weight: bold;
+      background: $purple-primary;
+      &:hover {
+        background: purple;
+      }
+    }
+  }
+
+}
+
+// media queries
+
+// .filter-element-container.radio-group {
+//   width: 100%;
+// }
+
+// @media (min-width: 1050px) {
+//   #invoices-filter-panel {
+//     .filter-element-container.status {
+//       width: 68%;
+//     }
+
+//     .filter-element-container.payment {
+//       width: 30%;
+//     }
+//   }
+// }
+
+// @media (min-width: 1280px) {
+//   #invoices-filter-panel {
+//     .filter-element-container.status {
+//       width: 69%;
+//     }
+//     .filter-element-container.payment {
+//       width: 30%;
+//     }
+//   }
+// }
+
+filter-element .selectize-input {
+  line-height: 15px;
+  border-radius: 2px !important;
+}

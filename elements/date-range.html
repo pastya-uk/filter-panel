@@ -1,0 +1,42 @@
+<!-- date-range filter element -->
+<div class="filter-element filter-element-date-range">
+  <label
+    class="filter-element-label"
+    for="filter-{{vm.element.property}}"
+    translate>
+    {{vm.element.title}}
+  </label>
+
+  <div class="range-group">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <i class="fa fa-calendar"></i>
+      </span>
+      <input
+        type="text"
+        id="filter-{{vm.element.property}}"
+        class="date-input form-control"
+        bs-datepicker
+        date-format="shortDate"
+        ng-model="vm.model.from"
+        ng-model-options="{ updateOn: 'default blur', allowInvalid: true }"
+        data-max-date="{{vm.model.to}}"
+        ng-change="vm.onDateChange()"
+        placeholder="{{'From' | translate}}">
+
+      <span class="input-group-addon">
+        <i class="fa fa-calendar"></i>
+      </span>
+      <input
+        type="text"
+        class="form-control date-input"
+        bs-datepicker
+        date-format="shortDate"
+        ng-model="vm.model.to"
+        ng-model-options="{ updateOn: 'default blur', allowInvalid: true }"
+        data-min-date="{{vm.model.from}}"
+        ng-change="vm.onDateChange()"
+        placeholder="{{'Until' | translate}}">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<!-- select-single filter element -->
+<div class="filter-element filter-element-text">
+  <label
+    class="filter-element-label"
+    for="filter-{{vm.element.property}}"
+    translate>
+    {{vm.element.title}}
+  </label>
+
+  <input
+    id="filter-{{vm.element.property}}"
+    type="text"
+    class="form-control filter-element-form-control"
+    ng-model="vm.model"
+    ng-change="vm.onTextChange()">
+</div>

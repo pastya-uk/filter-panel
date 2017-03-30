@@ -1,0 +1,13 @@
+<div class="filter-element filter-element-selectize-single">
+  <label
+    for="filter-{{vm.element.property}}"
+    class="filter-element-label" translate>
+    {{vm.element.title}}
+  </label>
+  <selectize
+    id="filter-{{vm.element.property}}"
+    options="vm.collection"
+    config="vm.element.config"
+    ng-model="vm.model">
+  </selectize>
+</div>

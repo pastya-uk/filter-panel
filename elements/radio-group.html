@@ -1,0 +1,18 @@
+<div class="filter-element filter-element-radio-group">
+  <div>
+    <label
+      for="filter-{{vm.element.property}}"
+      class="filter-element-label"
+      translate>
+      {{vm.element.title}}
+    </label>
+  </div>
+  <div class="radio-buttons">
+    <radio-button
+      ng-model="vm.model"
+      ng-value="{{item.id}}"
+      ng-repeat="item in vm.collection">
+      {{item.name | translate}}
+    </radio-button>
+  </div>
+</div>
